@@ -26,7 +26,7 @@ public class RubberDucksPage {
 
     public static int duckSubcategory() {     // Actions
         String sticker;
-        int result =0;
+        int result = 0;
         String name;
         actions().moveToElement($(buttonRubberDarkLocator)).perform();
         actions().click($(buttonSubCategoryLocator)).perform();
