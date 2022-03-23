@@ -1,5 +1,4 @@
 import Page.RubberDucksPage;
-
 import Page.TestBase;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
@@ -21,12 +20,13 @@ public class RubberDucksPageTest extends TestBase {
 
         ArrayList<String> nameSort;
         ArrayList<String> name;
-
+        logger.info("Start test duckSortNameTest");
         name = RubberDucksPage.duckSortName();
         nameSort = (ArrayList)name.clone();
 //        Collections.swap(nameSort, 0, 4);
         Collections.sort(nameSort);
         assertTrue(name.equals(nameSort),String.format("Exp: %s Res: %s",nameSort,name));
+        logger.info(String.format("ExpName: %s \n ActualName: %s",nameSort,name));
     }
 
     @Test
@@ -45,6 +45,7 @@ public class RubberDucksPageTest extends TestBase {
         int[]  Result = new int[2];
         Result = RubberDucksPage.duckNewLabel();
         assertTrue(Result[0] == Result[1],String.format("Exp: %s Res: %s ",Result[0],Result[1]));
+        logger.info(String.format("ExpLabel: %s ActualLabel: %s",Result[0],Result[1]));
     }
 
 }
