@@ -8,7 +8,7 @@ import static org.testng.Assert.assertTrue;
 public class RubberDucksPageTest extends TestBase {
 
     @Test
-    public void duckSubcategoryTest() {
+    public void duckSubcategoryTest() throws InterruptedException {
         int result=0;
 
         result = RubberDucksPage.duckSubcategory();
@@ -37,6 +37,7 @@ public class RubberDucksPageTest extends TestBase {
         price = RubberDucksPage.duckSortPrice();
         priceSort = (ArrayList)price.clone();
         Collections.sort(priceSort);
+        logger.info(String.format("ExpName: %s \n ActualName: %s",priceSort,price));
         assertTrue(price.equals(priceSort),String.format("Exp: %s Res: %s",priceSort,price));
     }
 
