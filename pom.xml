@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.si</groupId>
-    <artifactId>Selenid</artifactId>
+    <artifactId>Selenide</artifactId>
     <version>1.0</version>
 
     <properties>
         <Ver>4.1.2</Ver>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
 
@@ -19,7 +20,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.5</version>
+            <version>7.4.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -34,13 +35,7 @@
             <version>${Ver}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
+         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
             <version>${Ver}</version>
@@ -70,7 +65,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                  <argLine>-Dfile.encoding=UTF-8</argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/java/TestSuites/run.xml</suiteXmlFile>
                     </suiteXmlFiles>
@@ -88,9 +83,9 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
-                <configuration>
-             <resultsDirectory>D:/GitRepository/Selenide/allure-results/</resultsDirectory>
-                </configuration>
+            <configuration>
+                <resultsDirectory>D:/GitRepository/Selenide/allure-results/</resultsDirectory>
+             </configuration>
             </plugin>
         </plugins>
     </build>

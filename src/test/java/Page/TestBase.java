@@ -1,5 +1,7 @@
 package Page;
+import com.codeborne.selenide.Configuration;
 import org.apache.log4j.Logger;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import static com.codeborne.selenide.Selenide.*;
@@ -11,9 +13,18 @@ public class TestBase {
 
     @BeforeMethod
     public void setup(){
-        open(Configuration.baseURL);
-
-    }
+        Configuration.timeout = 15000;
+        Configuration.pageLoadTimeout = 15000;
+    //    Configuration.startMaximized = true;
+        Configuration.browser = "CHROME";
+        Configuration.baseUrl = "https://litecart.stqa.ru/en/";
+        open(Configuration.baseUrl);
+     }
+  //  @AfterMethod
+   // public void close(){
+  //      closeWindow();
+   //
+    // }
 
 }
 
