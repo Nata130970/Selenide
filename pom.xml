@@ -67,8 +67,12 @@
                 <configuration>
                   <argLine>-Dfile.encoding=UTF-8</argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/java/TestSuites/run.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/java/resourcse/run.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -84,7 +88,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
             <configuration>
-                <resultsDirectory>D:/GitRepository/Selenide/allure-results/</resultsDirectory>
+                <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
              </configuration>
             </plugin>
         </plugins>

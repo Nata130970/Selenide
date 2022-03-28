@@ -1,6 +1,9 @@
 import Page.HomePage;
 import Page.TestBase;
 import com.codeborne.selenide.ElementsCollection;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
@@ -8,6 +11,10 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 public class HomePageTest extends TestBase {
+
+    @Epic(value = "Duck-site")
+    @Feature(value = "Check page")
+    @Story(value = "Страница RubberDark")
 
     @Test
     public void duckClickRubberDarkTest() {
@@ -17,7 +24,9 @@ public class HomePageTest extends TestBase {
         $(title).shouldHave(text("Rubber Ducks"));
         logger.info("End test duckClickRubberDarkTest");
     }
-
+    @Epic(value = "Duck-site")
+    @Feature(value = "Check page")
+    @Story(value = "Страница DeliveryInformation")
     @Test
     public void duckClickDeliveryInformationTest() {
         ElementsCollection footer ;
@@ -25,7 +34,9 @@ public class HomePageTest extends TestBase {
         footer = HomePage.duckClickDeliveryInformation();
         $$(footer).get(1).shouldHave(text("Delivery Information"));
     }
-
+    @Epic(value = "Duck-site")
+    @Feature(value = "Check page")
+    @Story(value = "Страница TermCondition")
     @Test
     public void duckClickTermConditionTest() {
 
